@@ -1,0 +1,157 @@
+<!--
+ * @Author: your name
+ * @Date: 2018-12-18 18:34:46
+ * @LastEditTime: 2020-06-27 20:15:20
+ * @LastEditors: your name
+ * @Description: In User Settings Edit
+ * @FilePath: /ppt-demo/src/index.html
+--> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>浏览器渲染</title>
+<style>
+.skeleton[data-v-2ec6e48c] {
+    padding: 10px;
+}
+.skeleton .skeleton-head[data-v-2ec6e48c],
+.skeleton .skeleton-title[data-v-2ec6e48c],
+.skeleton .skeleton-content[data-v-2ec6e48c] {
+    background: rgb(194, 207, 214);
+}
+.skeleton-head[data-v-2ec6e48c] {
+    width: 100px;
+    height: 100px;
+    float: left;
+}
+.skeleton-body[data-v-2ec6e48c] {
+    margin-left: 110px;
+}
+.skeleton-title[data-v-2ec6e48c] {
+width: 500px;
+height: 60px;
+transform-origin: left;
+    -webkit-animation: skeleton-stretch-data-v-2ec6e48c .5s linear infinite alternate;
+            animation: skeleton-stretch-data-v-2ec6e48c .5s linear infinite alternate;
+}
+.skeleton-content[data-v-2ec6e48c] {
+width: 260px;
+height: 30px;
+margin-top: 10px;
+transform-origin: left;
+    -webkit-animation: skeleton-stretch-data-v-2ec6e48c .5s -.3s linear infinite alternate;
+            animation: skeleton-stretch-data-v-2ec6e48c .5s -.3s linear infinite alternate;
+}
+@-webkit-keyframes skeleton-stretch-data-v-2ec6e48c {
+from {
+        transform: scalex(1);
+}
+to {
+        transform: scalex(.3);
+}
+}
+@keyframes skeleton-stretch-data-v-2ec6e48c {
+from {
+        transform: scalex(1);
+}
+to {
+        transform: scalex(.3);
+}
+}
+
+
+.skeleton[data-v-1a1963bf] {
+    padding: 10px;
+}
+.skeleton .skeleton-head[data-v-1a1963bf],
+.skeleton .skeleton-title[data-v-1a1963bf],
+.skeleton .skeleton-content[data-v-1a1963bf] {
+    background: rgb(194, 207, 214);
+}
+.skeleton-head[data-v-1a1963bf] {
+    width: 100px;
+    height: 100px;
+    float: left;
+}
+.skeleton-body[data-v-1a1963bf] {
+    margin-left: 110px;
+}
+.skeleton-title[data-v-1a1963bf] {
+width: 500px;
+height: 60px;
+transform-origin: left;
+    -webkit-animation: skeleton-stretch-data-v-1a1963bf .5s linear infinite alternate;
+            animation: skeleton-stretch-data-v-1a1963bf .5s linear infinite alternate;
+}
+.skeleton-content[data-v-1a1963bf] {
+width: 260px;
+height: 30px;
+margin-top: 10px;
+transform-origin: left;
+    -webkit-animation: skeleton-stretch-data-v-1a1963bf .5s -.3s linear infinite alternate;
+            animation: skeleton-stretch-data-v-1a1963bf .5s -.3s linear infinite alternate;
+}
+@-webkit-keyframes skeleton-stretch-data-v-1a1963bf {
+from {
+        transform: scalex(1);
+}
+to {
+        transform: scalex(.3);
+}
+}
+@keyframes skeleton-stretch-data-v-1a1963bf {
+from {
+        transform: scalex(1);
+}
+to {
+        transform: scalex(.3);
+}
+}
+
+</style><link href="/client.css" rel="stylesheet"></head>
+<body>
+  <div id="app"><div data-server-rendered="true"><div id="Skeleton-bar" class="skeleton" style="display:none;" data-v-2ec6e48c><div class="skeleton-head" data-v-2ec6e48c></div> <div class="skeleton-body" data-v-2ec6e48c><div class="skeleton-title" data-v-2ec6e48c></div> <div class="skeleton-content" data-v-2ec6e48c></div></div></div><div id="Skeleton-foo" class="skeleton" style="display:none;" data-v-1a1963bf><div class="skeleton-head" data-v-1a1963bf></div> <div class="skeleton-body" data-v-1a1963bf><div class="skeleton-title" data-v-1a1963bf></div> <div class="skeleton-content" data-v-1a1963bf></div></div></div></div><script>
+            var pathname = window.location.pathname;
+            var hash = window.location.hash;
+            var skeletons = [{
+                id: 'Skeleton-foo',
+                el: document.querySelector('#Skeleton-foo')
+            },{
+                id: 'Skeleton-bar',
+                el: document.querySelector('#Skeleton-bar')
+            }];
+            var isMatched = function(pathReg, mode) {
+                if (mode === 'hash') {
+                    return pathReg.test(hash.replace('#', ''));
+                }
+                else if (mode === 'history') {
+                    return pathReg.test(pathname);
+                }
+                return false;
+            };
+            var showSkeleton = function(skeletonId) {
+                for (var i = 0; i < skeletons.length; i++) {
+                    var skeleton = skeletons[i];
+                    if (skeletonId === skeleton.id) {
+                        skeleton.el.style = 'display:block;';
+                    }
+                    else {
+                        skeleton.el.style = 'display:none;';
+                    }
+                }
+            };
+            
+                if (isMatched(/^\/foo(?:\/)?$/i, 'history')) {
+                    showSkeleton('Skeleton-foo');
+                }
+            
+                else if (isMatched(/^\/bar(?:\/)?$/i, 'history')) {
+                    showSkeleton('Skeleton-bar');
+                }
+            
+        </script><!-- shell --></div>
+<script type="text/javascript" src="/client.bundle.js"></script><script type="text/javascript" src="/vendor.bundle.js"></script></body>
+</html>
